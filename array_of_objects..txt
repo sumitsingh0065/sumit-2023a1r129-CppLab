@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    int StudID;
+    string StudName;
+    float marks;  // Added missing member variable
+
+public:
+    // Parameterized constructor
+    Student(int id, string name, float m) {
+        StudID = id;
+        StudName = name;
+        marks = m;
+    }
+
+    // Function to display Student details
+    void display() {
+        cout << "Stud ID: " << StudID << "\t";
+        cout << "Student Name: " << StudName << "\t";
+        cout << "Marks: " << marks << endl;
+    }
+};
+
+int main() {
+    // Array of Student objects
+    Student students[5] = {
+        Student(101, "John Doe", 85.5),
+        Student(102, "Jane Smith", 90.0),
+        Student(103, "Alice Johnson", 78.5),
+        Student(104, "Bob Brown", 88.0),
+        Student(105, "Charlie Davis", 92.5)
+    };
+
+    // Display all Student details
+    cout << "Student Records:\n";
+    for (int i = 0; i < 5; i++) {
+        students[i].display();
+    }
+
+    return 0;
+}
