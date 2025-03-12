@@ -1,0 +1,38 @@
+/* 
+3a. to update the details of a student using a member funciton of student class
+3b. to delete the details of the details of a student using a member function f student 
+*/
+
+#include<iostream>
+using namespace std;
+class student{
+public : int studentid ; float marks;
+student(int studentid1 , float marks1){
+    studentid=studentid1;
+    marks = marks1;
+
+}
+void display(){
+    cout<<"\n student id is :"<<studentid;
+     cout<<"\n marks are" <<marks;
+}
+void deletestudent(){ //delete funciton
+    studentid=0;
+marks=0;
+}
+
+};
+void update(student &obj1){
+cout<<"\n enter inforamtion you want to update";
+cout<<"\n enter new student id";
+cin>>obj1.studentid;
+cout<<"\n enter your update marks";
+cin>>obj1.marks;
+}
+int main(){
+    student obj1(101,450);
+    obj1.display();
+    update(obj1);
+    obj1.display();
+    return 0;
+}
