@@ -1,0 +1,46 @@
+// Grand child class
+
+#include<iostream>
+using namespace std;
+class  myapp{         // parent class
+    public : void welcome_message()
+    {
+        cout<<"welcome to student management app";
+
+    }
+};
+class login : public myapp  // child class
+// syntax class child class name sign of inheritance
+// public parent class 
+{
+    private : int pass=123,pass1;
+public : void Accept(){
+cout<<"\n Enter your password";
+cin>>pass1;
+if(pass == pass1){
+    cout<<"\n login successful";
+    }
+    else{
+        cout<<"\n login failed";
+    }
+}
+};
+class studentinfo : public login{   // Grand child class
+    private : string name;
+int Regno;
+public : void info(){
+    cout<<"enter your name regristration name";
+    cin>>name>>Regno;
+}
+public : void display(){
+    cout<<"information entered by the student is : "<<"Name is "<<name<<"\n Register is"<<Regno;
+}
+};
+int main(){
+    studentinfo obj;  // child class object
+    obj.welcome_message();  //calling parent class function with child class object
+    obj.Accept();
+    obj.info();
+    obj.display();
+    return 0;
+}
