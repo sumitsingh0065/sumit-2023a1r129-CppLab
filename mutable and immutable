@@ -1,0 +1,37 @@
+/* mutable and immutable (read only)form of data
+e.g Mutable
+int a=0;
+a=1;
+In cpp , we can make our data immutable using constant,
+In cpp we have constant variable, 
+constant function
+constant object. 
+If we create a variable as constant , we cannot modify its value after initiliazation.
+If we create a funciton as constant, we can modify data member inside fucniton defination
+If we create object as constant, the object will call constant function only.
+*/
+// EXAMPLE 1.
+
+#include <iostream>
+using namespace std;
+class program {
+    public : int b; //local variable
+    public : program(const int a) // constant variable inside constructor
+    {
+        //a=15;     // 
+                 // immutable data after initilization
+        b=a;    // passing read only value to local variable
+ 
+    }
+    void modify()
+    {
+        cout<<"value of b is "<<b;
+    }
+};
+int main(){
+    program obj(24);
+    obj.modify();
+    return 0;
+}
+
+
