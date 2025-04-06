@@ -1,0 +1,37 @@
+write a program to
+a. create a constant variable A and initilaztion using constructor with value =1
+b. create a local variable b with value =10
+c. create a constant function fun1() and increment value of a and b by 5 and display
+d. create a member function fun2() and increment value of a and b by 10 and display
+e. write your observation in comments, in which point u got error and why u got error at that point.
+*/
+#include <iostream>
+using namespace std;
+
+class Test {
+private:
+    const int A; // Constant variable A
+
+public:
+    Test() : A(1) {} // Initializing A using constructor
+
+    void fun2() {
+        int b = 10; // Local variable
+        b += 10;
+        cout << "fun2 - A: " << A << " b: " << b << endl;
+    }
+    
+    void fun1() const { // Constant function
+        int b = 10;
+
+        b += 5;
+        cout << "fun1 - A: " << A << " b: " << b << endl;
+    }
+};
+
+int main() {
+    Test obj;
+    obj.fun1(); // Calling constant function
+    obj.fun2(); // Calling normal member function
+    return 0;
+}
