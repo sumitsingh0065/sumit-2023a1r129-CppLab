@@ -1,0 +1,75 @@
+
+/* 
+Multi level inheritance 
+a. create a base class with name myapp
+b. create a fucntion message() , display welcome message on screen
+c. create a function login() accept pin from user and validate pin aggainst value 123 and returm message yes or no
+d. create a derive class with name studentinfo
+e. create a funciton accept() store student information like name, registration number, marks but only when user login successfully.
+f. create a fucniton display() to display student information on screen.
+g. create one more derived class with name grade_calc , this class will take inheritance from studentinfo class.
+h. create a funciton cal() , this function will accept marks from accept() function of studentinfo class and calculate perentage and grade as per following:
+Percentage between 80 to 100A
+Percentage between 70 to 80B
+Percentage between 60 to 70C
+otherwise not Qualified
+*/
+
+
+#include<iostream>
+using namespace std;
+class  myapp{         // parent class
+    public :void function_message()
+    {
+        cout<<"welcome";
+
+    }
+};
+class  : public myapp  
+{
+    private : int pin=123,pin1;
+public : void Accept(){
+cout<<"\n Enter your pin";
+cin>>pin;
+if(pin == 123){
+    cout<<"\n yes";
+    }
+    else{
+        cout<<"\n No";
+    }
+}
+};
+class studentinfo : public myapp{  
+    private : string name;
+int Regno;
+protected : float marks;
+public : void info(){
+    cout<<"enter your name regristration name nd marks";
+    cin>>name>>Regno>>marks;
+}
+public : void display(){
+    cout<<"login successfully: "<<"Name is "<<name<<"\n Register is"<<Regno<<"Marks = "<<marks;
+}
+};
+
+class grade : public studentinfo {
+    public : 
+    void clasify(){
+        float percentage = marks;
+        cout<<"percentage :"<<percentage<<"%"<<endl;
+        if(percentage >=80 && percentage <=100)
+        cout<<"grade A"<<endl;
+        else if(percentage >=70 && percentage <=80)
+        cout<<"grade B"<<endl;
+        else if(percentage >=60 && percentage <=70)
+        cout<<"grade C"<<endl;
+        else
+        cout<<"not qualified"<<endl;
+
+    }
+};
+int main(){
+    grade student;
+    
+
+}
