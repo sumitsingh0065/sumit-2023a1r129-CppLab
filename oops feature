@@ -1,0 +1,48 @@
+/* Opps features :- Inheritance
+inheritance means
+using existing class features into new class.
+
+constructor and destructor role in inheritance 
+
+Rule : To use exisitng class feature into class , we have atleast 1 new feature in new class.
+Types of inheritance in cpp_
+1. Single level inheritance
+2. Multi level inheritance
+3. Multiple  inheritance
+4. Hybrid inheritance
+5. Hierarchichal inheritance
+
+
+*/
+// program single level inheritance (student management system)
+#include<iostream>
+using namespace std;
+class  myapp{         // parent class
+    public : void welcome_message()
+    {
+        cout<<"welcome to student management app";
+
+    }
+};
+class studentinfo : public myapp  // child class
+// syntax class child class name sign of inheritance
+// public parent class 
+{
+    private : int pass=123,pass1;
+public : void login(){
+cout<<"\n Enter your password";
+cin>>pass1;
+if(pass == pass1){
+    cout<<"\n Login successful";
+    }
+    else{
+        cout<<"\n Login failed";
+    }
+}
+};
+int main(){
+    studentinfo obj;  // child class object
+    obj.welcome_message();  //calling parent class function with child class object
+    obj.login();
+    return 0;
+}
