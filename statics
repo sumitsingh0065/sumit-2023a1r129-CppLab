@@ -1,0 +1,34 @@
+/* 
+Program to count number of users using static variable
+*/
+
+#include <iostream>
+using namespace std;
+
+class User {
+public:
+    static int userCount;
+
+    
+    User() {
+        userCount++;
+    }
+
+    
+    static void displayUserCount() {
+        cout << "Total Users: " << userCount << endl;
+    }
+};
+
+int User::userCount = 0;
+
+int main() {
+    User u1; // First user created
+    User u2; // Second user created
+    User u3; // Third user created
+
+    User::displayUserCount(); 
+
+    return 0;
+}
+
